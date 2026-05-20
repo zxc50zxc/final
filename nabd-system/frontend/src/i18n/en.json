@@ -1,0 +1,88 @@
+{
+  "appName": "Nabd",
+  "tagline": "Smart Health Crowd Management System",
+  "nav": {
+    "home": "Home",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "pilgrim": "Pilgrim Portal",
+    "staff": "Staff Portal",
+    "admin": "Admin Dashboard"
+  },
+  "landing": {
+    "hero": "Smart routing to health centers in the holy sites",
+    "problem": "Problem",
+    "problemText": "Random congestion at health centers for non-emergency cases delays critical care.",
+    "solution": "Solution",
+    "solutionText": "A digital platform directing pilgrims to the least crowded center with smart scheduling and medication workflows.",
+    "track": "Target Track",
+    "trackText": "Smart crowd management — also serving pilgrim experience.",
+    "tech": "Technologies",
+    "techText": "Python · FastAPI · Plotly · React · Routing algorithms",
+    "value": "Value",
+    "valueText": "Less waiting, efficient resources, Vision 2030 aligned digital health.",
+    "ctaLogin": "Login",
+    "ctaRegister": "Register",
+    "demo": "Demo accounts in README"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "fullName": "Full name",
+    "loginTitle": "Login",
+    "registerTitle": "Create account",
+    "submitLogin": "Sign in",
+    "submitRegister": "Register",
+    "noAccount": "No account?",
+    "hasAccount": "Have an account?"
+  },
+  "pilgrim": {
+    "title": "Pilgrim Portal",
+    "zone": "Your current zone",
+    "recommend": "Recommended center",
+    "alternatives": "Nearby alternatives",
+    "wait": "Expected wait",
+    "min": "min",
+    "book": "Book appointment",
+    "center": "Center",
+    "datetime": "Date & time",
+    "notes": "Notes",
+    "submitBook": "Confirm booking",
+    "meds": "Medication request",
+    "medName": "Medication name",
+    "submitMed": "Submit request",
+    "myAppts": "My appointments",
+    "myMeds": "My medication requests",
+    "map": "Centers map",
+    "low": "Low crowd",
+    "medium": "Medium",
+    "high": "High"
+  },
+  "staff": {
+    "title": "Staff Portal",
+    "queue": "Queue size",
+    "waitTime": "Avg wait (minutes)",
+    "update": "Update",
+    "appts": "Upcoming appointments",
+    "medRequests": "Medication requests",
+    "status": "Status"
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "kpis": "Key metrics",
+    "centers": "Centers",
+    "totalQueue": "Total in queue",
+    "crowded": "Crowded centers",
+    "avgWait": "Avg wait time",
+    "heatmap": "Load heatmap",
+    "peak": "Peak hours",
+    "waitChart": "Wait comparison"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "lang": "العربية"
+  }
+}
