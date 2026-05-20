@@ -1,0 +1,40 @@
+# Render Blueprint — repo root is `final/`, app lives in `nabd-system/`
+# Dashboard: New → Blueprint → connect this repo (uses this file automatically)
+
+services:
+  - type: web
+    name: nabd-api
+    runtime: python
+    rootDir: nabd-system/backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.13.9"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: sqlite:///./nabd.db
+      - key: CORS_ORIGINS
+        fromService:
+          type: web
+          name: nabd-web
+          envVarKey: RENDER_EXTERNAL_URL
+
+  - type: web
+    name: nabd-web
+    runtime: static
+    rootDir: nabd-system/frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: nabd-api
+          envVarKey: RENDER_EXTERNAL_URL

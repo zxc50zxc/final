@@ -48,3 +48,21 @@ npm run dev
 - Medication request workflow
 - Staff queue management
 - Admin analytics dashboard (heatmap, peak hours)
+
+## Deploy on Render
+
+The repo root is `final/` (parent of `nabd-system/`). Use the included **`render.yaml`** at repo root.
+
+1. Push this repository to GitHub.
+2. In [Render](https://render.com): **New → Blueprint** → connect the repo.
+3. Render creates **nabd-api** (Python) and **nabd-web** (static React) with correct `rootDir`.
+4. After deploy, open the **nabd-web** URL (frontend). API docs: `https://<nabd-api-host>/docs`.
+
+**Manual setup (if not using Blueprint):**
+
+| Service | Root Directory | Build | Start / Publish |
+|---------|----------------|-------|-----------------|
+| API | `nabd-system/backend` | `pip install -r requirements.txt` | `uvicorn app.main:app --host 0.0.0.0 --port $PORT` |
+| Web | `nabd-system/frontend` | `npm install && npm run build` | Publish: `dist` |
+
+Set `PYTHON_VERSION=3.13.9` on the API service. Set `VITE_API_URL` to your API URL (no trailing slash).
